@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="144" viewBox="0 0 432 144">
+  <!-- ランチャーアイコン（docs/アイコン/基本設計.md）の見本。左: 白い画面の丸いアイコン、中: ダークの画面、右: 単色版（テーマアイコンの例）。
+       座標は adaptive icon の 108×108 の格子（docs/アイコン/詳細設計.md 2 章）。実際のアイコンは res/ のベクター画像で作る（6.5） -->
+  <defs>
+    <clipPath id="circle"><circle cx="54" cy="54" r="36"/></clipPath>
+  </defs>
+  <rect x="0" y="0" width="144" height="144" fill="#FFFFFF"/>
+  <rect x="144" y="0" width="144" height="144" fill="#141518"/>
+  <rect x="288" y="0" width="144" height="144" fill="#E8EEF8"/>
+
+  <g transform="translate(-18 -18) scale(1.6666)">
+    <g clip-path="url(#circle)">
+      <rect width="108" height="108" fill="#F3F4F7"/>
+      <path d="M37,29 H63 L73,39 V77 H37 Z" fill="#FFFFFF" stroke="#2550C8" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M63,29 V39 H73" fill="none" stroke="#2550C8" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M62.5,49 A8.5,6.5 0 1 0 55,57 A8.5,6.5 0 1 1 46.5,65" fill="none" stroke="#2550C8" stroke-width="4.5" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g transform="translate(126 -18) scale(1.6666)">
+    <g clip-path="url(#circle)">
+      <rect width="108" height="108" fill="#F3F4F7"/>
+      <path d="M37,29 H63 L73,39 V77 H37 Z" fill="#FFFFFF" stroke="#2550C8" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M63,29 V39 H73" fill="none" stroke="#2550C8" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M62.5,49 A8.5,6.5 0 1 0 55,57 A8.5,6.5 0 1 1 46.5,65" fill="none" stroke="#2550C8" stroke-width="4.5" stroke-linecap="round"/>
+    </g>
+  </g>
+  <g transform="translate(270 -18) scale(1.6666)">
+    <g clip-path="url(#circle)">
+      <rect width="108" height="108" fill="#C9D6F0"/>
+      <path d="M37,29 H63 L73,39 V77 H37 Z" fill="none" stroke="#1F3A80" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M63,29 V39 H73" fill="none" stroke="#1F3A80" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M62.5,49 A8.5,6.5 0 1 0 55,57 A8.5,6.5 0 1 1 46.5,65" fill="none" stroke="#1F3A80" stroke-width="4.5" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

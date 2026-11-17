@@ -1,0 +1,35 @@
+# Secrets (never commit)
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.pfx
+keystore.properties
+
+# Gradle / build outputs
+.gradle/
+build/
+**/build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+
+# Local config
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.navigation/
+.kotlin/
+
+# Temporary files (screenshots etc.)
+tmp/
+
+# OS
+.DS_Store
+Thumbs.db

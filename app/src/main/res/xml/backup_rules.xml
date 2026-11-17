@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   バックアップしない（Android 11 以前が読む。共通 基本設計 6.4、共通 詳細設計 13.5。開発者の決定 2026-11-17）。
+   android:allowBackup="false" で止まるが、念のため全部の場所を外す。
+-->
+<full-backup-content>
+    <exclude domain="root" path="." />
+    <exclude domain="file" path="." />
+    <exclude domain="database" path="." />
+    <exclude domain="sharedpref" path="." />
+    <exclude domain="external" path="." />
+</full-backup-content>

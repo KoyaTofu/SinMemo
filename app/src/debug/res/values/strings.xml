@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- デバッグ版のホーム画面の名前。リリース版と並べて入れたときに見分ける（リリース 詳細設計 3.1） -->
+    <string name="launcher_name">SinMemo (debug)</string>
+</resources>

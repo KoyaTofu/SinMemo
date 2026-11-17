@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ランチャーアイコンの背景（アイコン 基本設計 2 章。ライトの surfaceContainer と同じ） -->
+    <color name="ic_launcher_background">#F3F4F7</color>
+</resources>

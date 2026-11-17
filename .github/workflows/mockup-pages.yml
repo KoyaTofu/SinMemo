@@ -1,0 +1,69 @@
+# モックアップ（docs/mockup/SinMemo_mockup.html）をブラウザで検証し、GitHub Pages に公開する
+# （docs/記録/モックアップ検証.md 6 章、docs/記録/スケジュール.md 決定事項 13）。
+# 公開するのはモックアップの HTML 1 枚だけ（index.html として置く）。ほかの書類やソースは公開しない。
+# PR では検証だけ。main への push（docs/mockup/ かこのファイルが変わったとき）と手動実行で、検証が通ったら公開する。
+# 前提: リポジトリの Settings → Pages → Build and deployment → Source を「GitHub Actions」にしておく
+name: モックアップを検証・公開
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - docs/mockup/**
+      - .github/workflows/mockup-pages.yml
+  pull_request:
+    paths:
+      - docs/mockup/**
+      - .github/workflows/mockup-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: ブラウザで検証
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Playwright（Chromium）を入れる
+        run: |
+          npm install --no-save --no-package-lock playwright@1.63.0
+          npx playwright install --with-deps chromium
+      - name: 検証（ネットワークを遮断して、シナリオを再現）
+        run: node docs/mockup/verify_mockup.js docs/mockup/SinMemo_mockup.html
+
+  deploy:
+    name: GitHub Pages に公開
+    needs: verify
+    # main への push と手動実行のときだけ公開する（PR では検証だけ）。
+    # 非公開のリポジトリでは Pages を使えない（有料プランが要る）ので、公開のリポジトリのときだけ動かす
+    if: github.event_name != 'pull_request' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    # ジョブの権限は上の permissions を置き換えるので、checkout 用の contents: read もここに書く
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    # 公開は 1 つずつ。途中の公開は取り消さない
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 公開するファイルを集める（モックアップ 1 枚だけ）
+        run: |
+          mkdir _site
+          cp docs/mockup/SinMemo_mockup.html _site/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

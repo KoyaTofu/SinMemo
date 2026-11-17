@@ -1,0 +1,41 @@
+<resources>
+    <!-- 一覧のアプリバーのタイトル。ホーム画面の名前は launcher_name（デバッグ版は src/debug で上書き。リリース 詳細設計 3.1） -->
+    <string name="app_name">SinMemo</string>
+    <string name="launcher_name">SinMemo</string>
+    <string name="settings_title">設定</string>
+    <string name="menu">メニュー</string>
+    <string name="create_memo">新規作成</string>
+
+    <!-- S-02 メモ編集・D-01・D-02（メモ編集 基本設計 4 章・詳細設計 6 章） -->
+    <string name="back">戻る</string>
+    <string name="save">保存</string>
+    <string name="delete">削除</string>
+    <string name="cancel">キャンセル</string>
+    <string name="discard">破棄</string>
+    <string name="memo_body">本文</string>
+    <string name="memo_body_placeholder">メモを入力</string>
+    <string name="confirm_delete">このメモを削除しますか？</string>
+    <string name="confirm_discard">変更を破棄しますか？</string>
+    <!-- 数字は 3 桁ごとにカンマで区切った文字列を渡す（例: 9,688/10,000文字） -->
+    <string name="char_count">%1$s/%2$s文字</string>
+    <string name="input_too_long">10,000文字を超えるため入力できません</string>
+    <string name="save_failed">保存できませんでした</string>
+    <string name="delete_failed">削除できませんでした</string>
+    <string name="save_over_limit">10,000文字を超えるため保存できません</string>
+    <string name="memo_load_failed">メモを読み込めませんでした</string>
+
+    <!-- S-03 設定・D-03・D-04（設定 基本設計 7 章・詳細設計 9 章） -->
+    <string name="theme">テーマ</string>
+    <string name="theme_system">端末の設定に従う</string>
+    <string name="theme_light">ライト</string>
+    <string name="theme_dark">ダーク</string>
+    <string name="font_size">文字サイズ</string>
+    <string name="font_size_small">小</string>
+    <string name="font_size_medium">中</string>
+    <string name="font_size_large">大</string>
+    <string name="version">バージョン</string>
+    <string name="ok">OK</string>
+    <!-- 起動時の設定の読み込み（設定 詳細設計 10.7） -->
+    <string name="settings_load_timeout">設定を読み込めませんでした。初期値で表示します</string>
+    <string name="settings_reset">設定を初期値に戻しました</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    テーマアイコン（Android 13 以降）用の単色版（アイコン 詳細設計 1 章）。前景と同じ形で、用紙の白い塗りだけ外す。
+    色は端末が壁紙に合わせて付ける（ここの色は形の濃さとしてだけ使われる）。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:pathData="M37,29 H63 L73,39 V77 H37 Z"
+        android:strokeColor="#FF000000"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4" />
+    <path
+        android:pathData="M63,29 V39 H73"
+        android:strokeColor="#FF000000"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4" />
+    <path
+        android:pathData="M62.5,49 A8.5,6.5 0 1 0 55,57 A8.5,6.5 0 1 1 46.5,65"
+        android:strokeColor="#FF000000"
+        android:strokeLineCap="round"
+        android:strokeWidth="4.5" />
+</vector>

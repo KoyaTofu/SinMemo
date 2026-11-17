@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SinMemo" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!--
+        起動用のテーマ（設定 基本設計 5 章・詳細設計 6 章）。スプラッシュを出し、MainActivity の installSplashScreen() のあとで
+        Theme.SinMemo に戻る。背景は設定を読む前に出すため、初期値ライトの背景色（白）で固定。
+    -->
+    <style name="Theme.SinMemo.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@android:color/white</item>
+        <!-- アイコンの前景（用紙と S）だけを白の上に出す（アイコン 基本設計 4 章・詳細設計 3 章） -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.SinMemo</item>
+    </style>
+</resources>
